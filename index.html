@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+function getComputerChoice() {
+  let compChoice = (Math.random());
+  if (compChoice > 0.33 && compChoice < 0.66) {
+    return("Rock");
+  } else if (compChoice < 0.33) {
+    return("Paper");
+  } else {
+    return("Scissors");
+  }
+}
+
+function getHumanChoice() {
+  let humChoice = '';
+  let pick = prompt("Rock, Papaer, Scissors, go.").toLowerCase();
+  if (pick == "rock") {
+    humChoice += "rock";
+  } else if (pick == "paper") {
+    humChoice += "paper";
+  } else if (pick == "scissors") {
+    humChoice += "scissors";
+  } else {
+    alert("Pick Rock, Paper, or Scissors.");
+    getHumanChoice();
+  }
+
+  return(humChoice)
+}
+
+</script>
+  
+</body>
+</html>
