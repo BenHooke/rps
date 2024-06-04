@@ -9,23 +9,23 @@
 
 <script>
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+let humanScore = 0
+let computerScore = 0
 
 function getComputerChoice() {
   let compChoice = (Math.random());
   if (compChoice > 0.33 && compChoice < 0.66) {
-    return("Rock");
+    return("rock");
   } else if (compChoice < 0.33) {
-    return("Paper");
+    return("paper");
   } else {
-    return("Scissors");
+    return("scissors");
   }
 }
 
 function getHumanChoice() {
   let humChoice = '';
-  let pick = prompt("Rock, Papaer, Scissors, go.").toLowerCase();
+  let pick = prompt("Rock, Paper, Scissors, go.").toLowerCase();
   if (pick == "rock") {
     humChoice += "rock";
   } else if (pick == "paper") {
@@ -39,6 +39,49 @@ function getHumanChoice() {
 
   return(humChoice)
 }
+
+function playRound(humanChoice, computerChoice) {
+  if (humanChoice == "rock" && computerChoice == "scissors"
+  || humanChoice == "paper" && computerChoice == "rock"
+  || humanChoice == "scissors" && computerChoice == "paper") {
+    console.log(`You win! ${humanChoice.toUpperCase()} beats ${computerChoice.toUpperCase()}!`);
+    humanScore += 1;
+    return;
+  }  else if (humanChoice == computerChoice) {
+      console.log("Draw!");
+      return;
+  }  else {
+      console.log(`You lose! ${computerChoice.toUpperCase()} beats ${humanChoice.toUpperCase()}!`);
+      computerScore += 1;
+      return;
+    }
+  }
+
+const humanSelection = getHumanChoice().toLowerCase();
+const computerSelection = getComputerChoice();
+
+
+
+
+function playGame() {
+  while (humanScore < 3 && computerScore < 3) {
+    keepPlaying = true
+  } 
+  if (humanScore == 3) {
+    keepPlaying = false;
+    console.log("You Win!");
+    return
+  }
+  if (computerScore == 3) {
+    keepPlaying = false;
+    console.log("You Lose!");
+    return
+  }
+}
+
+playGame();
+
+
 
 </script>
   
