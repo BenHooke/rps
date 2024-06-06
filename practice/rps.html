@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rock, Paper, Scissors</title>
+  <title>Document</title>
 </head>
 <body>
 
@@ -41,6 +41,9 @@ function getComputerChoice(computerChoice) {
   return(computerChoice);
 }
 
+  // let humanChoice = getHumanChoice().toLowerCase();
+  // let computerChoice = getComputerChoice();
+
 
 function playRound(humanChoice, computerChoice) {
   
@@ -61,9 +64,9 @@ function playRound(humanChoice, computerChoice) {
 
 function endGame() {
   if (humanScore == 3){
-    console.log("You win the game!");
+    console.log("You win!");
   } else if (computerScore == 3){
-    console.log("You lost the game! Loser!");
+    console.log("You Lose!");
   }
 }
 
@@ -74,6 +77,9 @@ function playGame() {
   if (humanScore == 3 || computerScore == 3 ) {
     endGame();
   } else {
+    // getHumanChoice().toLowerCase();
+    // getComputerChoice();
+    // playRound(humanChoice, computerChoice);
     playGame();
   }
 }
