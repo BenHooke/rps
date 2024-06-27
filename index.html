@@ -4,10 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock, Paper, Scissors</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-<body>
+<body class="body">
 
-<script>
+<h1 class="header">Rock, Paper, Scissors</h1>
+
+<h3 class="subhead">Choose Your Weapon</h3>
+
+<div class="choice">
+  <button class="btn" id="rock">Rock</button>
+  <button class="btn" id="paper">Paper</button>
+  <button class="btn" id="scissors">Scissors</button>
+</div>
+
+<div class="hands">
+  <img class="humanPick" id="humanPick" src="img/human.png" alt="">
+  <h1 class="announcer"><span id="announcer"></span></h1>
+  <img class="computerPick" id="computerPick" src="img/cpu.png" alt="">
+</div>
+
+<div class="scoreBoard">
+  <div class="humanScore">
+    <p>Human Score</p>
+    <p><span class="score" id="hmnScore"></span></p>
+  </div>
+
+  <div class="cpuScore">
+    <p>Computer Score</p>
+    <p><span class="score" id="cpuScore"></span></p>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- <script>
 
 let humanScore = 0;
 let computerScore = 0;
@@ -76,9 +111,9 @@ function playGame() {
   } else {
     playGame();
   }
-}
+} -->
 
-playGame();
+<!-- // playGame(); -->
 
 </script>
   
